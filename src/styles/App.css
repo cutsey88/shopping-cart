@@ -35,15 +35,23 @@
 .header-links {
     display: flex;
     gap: 1rem;
-    padding-right: 2rem;
+    padding-right: 0.2rem;
 }
 
 .header-links a {
-    flex: 1;
-    line-height: 3;
     text-decoration: none;
+    color: black;
+    width: 4rem;
+    line-height: 4;
+    text-align: center;
+    flex: 1;
+}
+
+.header-links a:hover {
+    border-radius: 15px;
+    background-color: #ffdfa49d;
 }
 
 .header-links a.active {
-    color: red;
+    
 }

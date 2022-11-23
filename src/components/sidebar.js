@@ -9,6 +9,7 @@ function Sidebar(props) {
         <nav className="sidebar">
             <NavLink
                 to="/shop"
+                end
             >
                 All
             </NavLink>

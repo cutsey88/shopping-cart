@@ -11,8 +11,8 @@ function ShopContent(props) {
 
     return (
         <div className="shop-content">
-            <div className="shop-headers">
-                <p className="shop-header">Shop {subHeader}</p>
+            <div className="shop-header">
+                <p>Shop {subHeader}</p>
             </div>
             <ShopItems category={category} />
         </div>
