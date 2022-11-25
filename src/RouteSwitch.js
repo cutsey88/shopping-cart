@@ -13,10 +13,10 @@ const RouteSwitch = () => {
                 <Route path="/" element={<App />}>
                     <Route index element={<Home />} />
                     <Route path="shop" element={<Shop />}>
-                        <Route index element={<ShopContent />}/>
+                        <Route path="all" element={<ShopContent />}/>
                         <Route path=":category" element={<ShopContent />}/>
                     </Route>
-                    <Route path=":itemName" element={<ItemPage />} />
+                    <Route path=":itemId" element={<ItemPage />} />
                     <Route path="cart" element={<Cart />} />
                 </Route>
             </Routes>

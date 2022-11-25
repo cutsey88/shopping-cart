@@ -1,6 +1,4 @@
 .shop {
-    position: relative;
-    top: 6rem;
     display: flex;
     flex: 1;
 }
@@ -65,7 +63,7 @@
     padding: 0 3rem;
 }
 
-.item-box {
+.sp-item-box {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,15 +71,27 @@
     width: 250px;
     height: 360px;
     margin-top: 1rem;
+    padding: 0 0.8rem;
 }
 
-.image-box {
+.sp-item-box:hover {
+    background-color: #e0e0d6;
+    border-radius:4px;
+}
+
+.sp-item-box:hover > .sp-image-box > .sp-item-image {
+    opacity: 0.7;
+}
+
+.sp-image-box {
     width: inherit;
     display: flex;
     justify-content: center;
 }
 
-.item-image {
+.sp-item-image {
+    object-fit: cover;
+    max-width: 250px;
     max-height: 260px;
 }
 

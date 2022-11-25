@@ -1,7 +1,7 @@
 import { useParams, useOutletContext } from "react-router-dom";
 import ShopItems from "../components/shopItems";
 
-function ShopContent(props) {
+function ShopContent() {
 
     let params = useParams();
     let category = params.category;

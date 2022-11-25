@@ -14,70 +14,70 @@ let products = [
         name: "Benson Blender",
         id: "blender-1",
         category: "blenders",
-        price: 80.99,
+        price: "80.99",
         image: bensonBlender,
     },
     {
         name: "Derry Blender",
         id: "blender-2",
         category: "blenders",
-        price: 92.99,
+        price: "92.99",
         image: derryBlender,
     },
     {
         name: "Fisk Blender",
         id: "blender-3",
         category: "blenders",
-        price: 114.99,
+        price: "114.99",
         image: fiskBlender,
     },
     {
         name: "Benson Coffee Maker",
         id: "coffee-maker-1",
         category: "coffee-makers",
-        price: 3999.00,
+        price: "3,999.00",
         image: bensonCoffeeMaker,
     },
     {
         name: "Derry Coffee Maker",
         id: "coffee-maker-2",
         category: "coffee-makers",
-        price: 59.99,
+        price: "59.99",
         image: derryCoffeeMaker,
     },
     {
         name: "Benson Toaster",
         id: "toaster-1",
         category: "toasters",
-        price: 65.99,
+        price: "65.99",
         image: bensonToaster,
     },
     {
         name: "Derry Toaster",
         id: "toaster-2",
         category: "toasters",
-        price: 35.99,
+        price: "35.99",
         image: derryToaster,
     },
     {
         name: "Fisk Toaster",
         id: "toaster-3",
         category: "toasters",
-        price: 44.99,
+        price: "44.99",
         image: fiskToaster,
     },
     {
         name: "Retro Toaster",
         id: "toaster-4",
         category: "toasters",
-        price: 39.99,
+        price: "39.99",
         image: retroToaster,
     },
     {
         name: "Chrome Toaster",
         id: "toaster-5",
         category: "toasters",
-        price: 32.50,
+        price: "32.50",
         image: chromeToaster,
     },
 ];
@@ -101,4 +101,12 @@ export function getCategories() {
     }, []);
 
     return categories;
+}
+
+export function getProductById(productId) {
+    return products.find((product) => product.id === productId );
+}
+
+export function convertPriceToNumber(price) {
+    return parseFloat(price.replaceAll(',', ''), 10);
 }
