@@ -15,7 +15,6 @@ function App() {
   );
 
   function addToCart(e) {
-    console.log(cart);
     let productId = e.target.id.slice(3);
     let products = getProducts();
     let productMatch = products.find((prod) =>
@@ -33,12 +32,12 @@ function App() {
             }
             return prod;
           }),
-          total: prevCart.total + convertPriceToNumber(prevCart.products[prodIndex].price),
+          total: Math.round((prevCart.total + convertPriceToNumber(prevCart.products[prodIndex].price)) * 100) / 100,
         }
       }
       return {
         products: prevCart.products.concat({...productMatch, quantity: 1}),
-        total: prevCart.total + convertPriceToNumber(productMatch.price),
+        total: Math.round((prevCart.total + convertPriceToNumber(productMatch.price)) * 100) / 100,
       };
     })
   };
@@ -52,10 +51,10 @@ function App() {
       let newProds = prevCart.products.slice(0, dIndex)
         .concat(prevCart.products.slice(dIndex + 1));
       
-      let subTotal = prevCart.products[dIndex].price * prevCart.products[dIndex].quantity;
+      let subTotal = Math.round(convertPriceToNumber(prevCart.products[dIndex].price) * prevCart.products[dIndex].quantity * 100) / 100;
       return {
         products: newProds,
-        total: prevCart.total - convertPriceToNumber(subTotal),
+        total: Math.round((prevCart.total - subTotal) * 100) / 100,
       }
     })
   };
@@ -66,14 +65,16 @@ function App() {
       let targetProduct = prevCart.products.find((prod) =>
         prod.id === productId 
       )
-      let oldSubTotal = convertPriceToNumber(targetProduct.price) * targetProduct.quantity;
-      let preTotal = prevCart.total - oldSubTotal;
-      let newTotal = preTotal + (convertPriceToNumber(targetProduct.price) * convertPriceToNumber(e.target.value));
+      let inputVal = e.target.value === '' ? '0' : e.target.value;
+      let oldSubTotal = Math.round((convertPriceToNumber(targetProduct.price) * targetProduct.quantity) * 100) / 100;
+      let preTotal = Math.round((prevCart.total - oldSubTotal) * 100) / 100;
+      let subTotal = Math.round((convertPriceToNumber(targetProduct.price) * convertPriceToNumber(inputVal) * 100)) / 100;
+      let newTotal = Math.round((preTotal + subTotal) * 100) / 100;
 
       return {
         products: prevCart.products.map((prod) => {
           if (prod.id === productId) {
-            return { ...prod, quantity: convertPriceToNumber(e.target.value)}
+            return { ...prod, quantity: convertPriceToNumber(inputVal)}
           }
           return prod;
         }),

@@ -5,7 +5,6 @@ import CartItem from "../components/cartItem";
 function Cart() {
 
     const cartObj = useOutletContext();
-    console.log(cartObj.cart)
 
     return (
         <div className="cart">
