@@ -61,7 +61,22 @@ body {
 }
 
 .footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     height: 7rem;
     z-index: 98;
     background-color: #708e76;
 }
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+}
+
+.footer-links > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
