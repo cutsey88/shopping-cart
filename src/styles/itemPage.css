@@ -1,6 +1,7 @@
 .item-page {
     display: flex;
     flex: 1;
+    min-height: calc(100vh - 6rem);
     background-color: #f1f1ef;
 }
 
@@ -48,4 +49,28 @@
 
 .add-to-cart {
     width: 10rem;
+}
+
+@media  (max-width: 480px) {
+    .item-page {
+        flex-direction: column;
+    }
+
+    .ip-image-box {
+        max-height: 60vh;
+    }
+
+    .ip-item-image {
+        max-width: 90%;
+    }
+
+    .item-content {
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .item-info-box {
+        text-align: center;
+        width: auto;
+    }
 }

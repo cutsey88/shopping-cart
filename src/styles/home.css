@@ -1,13 +1,13 @@
 .home {
+    display: flex;
+    align-items: flex-end;
+    min-height: calc(100vh - 6rem);
     flex: 1;
     background-image: url("../images/kitchen/kitchen-corner.jpg");
     background-size: cover;
 }
 
 .greeting {
-    position: relative;
-    top: 16rem;
-    left: 6rem;
     height: 16rem;
     width: 50rem;
     font-size: 1.5rem;
@@ -15,4 +15,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 10rem;
+}
+
+@media  (max-width: 480px) {
+    .home {
+        background-position-x: center;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .greeting {
+        width: 80%;
+        text-align: center;
+        background-color: rgb(241,230,210, 0.5);
+        font-weight: 300;
+        margin-bottom: 0;
+    }
 }
