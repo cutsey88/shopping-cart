@@ -8,7 +8,7 @@ import Cart from "./routes/cart";
 
 const RouteSwitch = () => {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/shopping-cart">
             <Routes>
                 <Route path="/" element={<App />}>
                     <Route index element={<Home />} />
